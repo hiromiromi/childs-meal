@@ -2,7 +2,6 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background-color: #fff8f0;
 }
 
@@ -15,9 +14,12 @@ header {
   align-items: center;
 }
 
-.nav-menu {
+.nav-menu .lists-right {
+  list-style: none;
   display: flex;
   gap: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu a {
@@ -32,18 +34,25 @@ header {
 
 .main {
   text-align: center;
-  padding: 50px 20px;
+  padding: 30px 20px;
 }
 
 .main h1 {
   font-size: 36px;
   color: #333;
+  margin-bottom: 20px;
 }
 
 .main p {
   font-size: 18px;
   color: #666;
   margin-bottom: 30px;
+}
+
+.section-label {
+  font-size: 20px;
+  color: #444;
+  margin: 20px 0 10px;
 }
 
 .search-bar {
@@ -87,14 +96,33 @@ header {
   padding: 15px 30px;
   font-size: 16px;
   color: white;
-  background-color: #f8b400;
   border: none;
   border-radius: 10px;
   cursor: pointer;
 }
 
+.buttons button:nth-child(1) {
+  background-color: #ff9999;
+}
+
+.buttons button:nth-child(2) {
+  background-color: #ffcc99;
+}
+
+.buttons button:nth-child(3) {
+  background-color: #99ccff;
+}
+
+.buttons button:nth-child(4) {
+  background-color: #99ff99;
+}
+
+.buttons button:nth-child(5) {
+  background-color: #ffccff;
+}
+
 .buttons button:hover {
-  background-color: #e09d00;
+  filter: brightness(1.2);
 }
 
 footer {

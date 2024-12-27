@@ -1,2 +1,54 @@
-<h1>Meals#index</h1>
-<p>Find me in app/views/meals/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幼児ごはん</title>
+    <%= stylesheet_link_tag 'styles', media: 'all' %>
+</head>
+<body>
+    <header>
+        <div class="logo">幼児ごはん</div>
+        <nav class="nav-menu">
+          <ul class='lists-right'>
+            <li><%= link_to 'ログイン', "#", class: "login" %></li>
+            <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1></h1>
+        <p>レシピを見つけよう</p>
+
+        <div class="section-label">食材から探す</div>
+        <div class="search-bar">
+            <input type="text" placeholder="食材を入力してください">
+            <button>検索</button>
+        </div>
+
+        <div class="section-label">摂りたい栄養から探す</div>
+        <div class="buttons">
+            <button>炭水化物</button>
+            <button>タンパク質</button>
+            <button>脂質</button>
+            <button>ビタミン</button>
+            <button>ミネラル</button>
+        </div>
+
+        <div class="section-label">１食分の献立を探す</div>
+        <div class="buttons">
+            <button>一食献立</button>
+        </div>
+
+        <div class="buttons">
+            <button>コラム</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 幼児ごはん. <a href="#">利用規約</a> | <a href="#">プライバシーポリシー</a></p>
+    </footer>
+</body>
+</html>
