@@ -1,24 +1,52 @@
-# README
+## usersテーブル
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false ,unique: true |
+| encrypted_password | string | null: false               |
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+ - has_many :favorites
 
-Things you may want to cover:
+ ## ingredientsテーブル
+| Column    | Type   | Options      |
+| --------- | ------ | ------------ |
+| name      | string | null: false  |
+| nutrients | string | null: false  |
+| detail    | text   | null: false  |
 
-* Ruby version
+### Association
+ - belongs_to :recipe_ingredients(中間テーブル)
 
-* System dependencies
+## recipesテーブル
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| dish_name          | string | null: false               |
+| material           | string | null: false               |
+| dish_recipe        | text   | null: false               |
+| dish_nutrients     | text   | null: false               |
 
-* Configuration
+### Association
+ - belongs_to :recipe_ingredients(中間テーブル)
+ - has_many :favorites
 
-* Database creation
+## columnsテーブル
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| title              | string | null: false               |
+| news               | text   | null: false               |
 
-* Database initialization
+### Association
+- has_many :favorites
 
-* How to run the test suite
+##　favoritesテーブル
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| user_id            | string | null: false, foreign_key: true  |
+| column_id          | string | null: false, foreign_key: true  |
+| recipe_id          | text   | null: false, foreign_key: true  |
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :column
+- belongs_to :recipe
