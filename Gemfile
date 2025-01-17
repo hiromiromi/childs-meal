@@ -74,3 +74,5 @@ group :test do
   gem "webdrivers"
   gem "devise"
 end
+
+gem 'active_hash'

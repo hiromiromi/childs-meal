@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_16_013357) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_17_053511) do
+  create_table "ingredients", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "ingredient_nutrient_id", null: false
+    t.text "detail", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
