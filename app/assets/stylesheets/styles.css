@@ -14,7 +14,7 @@ header {
   align-items: center;
 }
 
-.nav-menu .lists-right {
+.user_nav .lists-right {
   list-style: none;
   display: flex;
   gap: 15px;
@@ -22,13 +22,13 @@ header {
   padding: 0;
 }
 
-.nav-menu a {
+.user_nav a {
   color: white;
   text-decoration: none;
   font-size: 16px;
 }
 
-.nav-menu a:hover {
+.user_nav a:hover {
   text-decoration: underline;
 }
 
@@ -84,6 +84,29 @@ header {
   background-color: #e09d00;
 }
 
+.menu-button button {
+  padding: 15px 30px;
+  font-size: 16px;
+  color: white;
+  background-color:mediumpurple;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.column-button button {
+  padding: 15px 30px;
+  font-size: 16px;
+  color: white;
+  background-color:gray;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -122,6 +145,14 @@ header {
 }
 
 .buttons button:hover {
+  filter: brightness(1.2);
+}
+
+.menu-button button:hover {
+  filter: brightness(1.2);
+}
+
+.column-button button:hover {
   filter: brightness(1.2);
 }
 
