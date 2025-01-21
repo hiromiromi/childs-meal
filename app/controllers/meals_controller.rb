@@ -1,7 +1,10 @@
 class MealsController < ApplicationController
 
   def index
-    @categories = Nutrient.all
+    @nutrients = Nutrient.all
   end
   
+  def show
+    @nutrient = Nutrient.find(params[:id])
+  end
 end

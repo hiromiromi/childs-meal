@@ -10,11 +10,11 @@
         </div>
 
         <div class="section-label">摂りたい栄養から探す</div>
-          <% @categories.each do |category| %>
-              <button onclick="location.href='#'">
-                 <%= category.label %>
-              </button>
+          <div class ="buttons">
+          <% @nutrients.each do |nutrient| %>
+            <button><%= link_to nutrient.label , ingredients_index_path(nutrient.id) %></button>
           <% end %>
+          </div>
 
         <div class="section-label">１食分の献立を探す</div>
         <div class="menu-button">

@@ -106,17 +106,15 @@ header {
   margin-bottom: 30px;
 }
 
-.buttons {
-  gap: 15px;
-  margin-bottom: 30px;
+a {
+  text-decoration: none;
+  color: white;
 }
 
 .buttons button {
   background-color: yellowgreen;
   padding: 15px 30px;
   font-size: 16px;
-  color: white;
-  border: none;
   border-radius: 10px;
   cursor: pointer;
 }
