@@ -106,16 +106,13 @@ header {
   margin-bottom: 30px;
 }
 
-
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 15px;
   margin-bottom: 30px;
 }
 
 .buttons button {
+  background-color: yellowgreen;
   padding: 15px 30px;
   font-size: 16px;
   color: white;
