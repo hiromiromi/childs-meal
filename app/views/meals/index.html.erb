@@ -10,13 +10,13 @@
         </div>
 
         <div class="section-label">摂りたい栄養から探す</div>
-        <div class="buttons">
-            <button>炭水化物</button>
-            <button>タンパク質</button>
-            <button>脂質</button>
-            <button>ビタミン</button>
-            <button>ミネラル</button>
-        </div>
+          <% @categories.each do |category| %>
+            <div class ="button">
+              <button onclick="location.href='#'">
+                 <%= category.label %>
+              </button>
+            </div>
+          <% end %>
 
         <div class="section-label">１食分の献立を探す</div>
         <div class="menu-button">

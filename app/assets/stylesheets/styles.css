@@ -124,26 +124,6 @@ header {
   cursor: pointer;
 }
 
-.buttons button:nth-child(1) {
-  background-color: #ff9999;
-}
-
-.buttons button:nth-child(2) {
-  background-color: #ffcc99;
-}
-
-.buttons button:nth-child(3) {
-  background-color: #99ccff;
-}
-
-.buttons button:nth-child(4) {
-  background-color: #99ff99;
-}
-
-.buttons button:nth-child(5) {
-  background-color: #ffccff;
-}
-
 .buttons button:hover {
   filter: brightness(1.2);
 }
