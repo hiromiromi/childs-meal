@@ -75,4 +75,8 @@ group :test do
   gem "devise"
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'active_hash'
