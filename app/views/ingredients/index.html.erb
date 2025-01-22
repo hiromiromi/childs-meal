@@ -11,7 +11,7 @@
         <% if @ingredients.any? %>
         <ul>
           <% @ingredients.each do |ingredient| %>
-            <li><%= link_to ingredient.name , ingredient_path(ingredient) %></li>
+            <li><%= link_to ingredient.name , ingredient_detail_path(ingredient) %></li>
           <% end %>
         </ul>
         <% else %>
