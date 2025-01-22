@@ -10,13 +10,11 @@
         </div>
 
         <div class="section-label">摂りたい栄養から探す</div>
-        <div class="buttons">
-            <button>炭水化物</button>
-            <button>タンパク質</button>
-            <button>脂質</button>
-            <button>ビタミン</button>
-            <button>ミネラル</button>
-        </div>
+          <div class ="buttons">
+          <% @nutrients.each do |nutrient| %>
+            <button><%= link_to nutrient.label , ingredient_path(nutrient.id) %></button>
+          <% end %>
+          </div>
 
         <div class="section-label">１食分の献立を探す</div>
         <div class="menu-button">

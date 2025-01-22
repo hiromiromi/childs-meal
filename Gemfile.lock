@@ -46,6 +46,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_hash (3.3.1)
+      activesupport (>= 5.0.0)
     activejob (7.0.8.7)
       activesupport (= 7.0.8.7)
       globalid (>= 0.3.6)
@@ -145,7 +147,10 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.17.2-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.17.2-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.5.9)
     psych (5.2.2)
       date
       stringio
@@ -254,8 +259,10 @@ GEM
 
 PLATFORMS
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
+  active_hash
   bootsnap
   capybara
   debug
@@ -265,6 +272,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mysql2 (~> 0.5)
+  pg
   puma (~> 5.0)
   rails (~> 7.0.0)
   rspec-rails (~> 4.0.0)

@@ -1,0 +1,22 @@
+  <%= render "shared/header" %>
+
+  <div class = "nutrient-show">
+    <div class = "ingredients-lists">
+      <h2 class = "ingredients-name">
+        <%= @nutrient.label %> 一覧
+      </h2>
+
+      <div class = "list">
+         
+        <% if @ingredients.any? %>
+        <ul>
+          <% @ingredients.each do |ingredient| %>
+            <li><%= link_to ingredient.name , ingredient_path(ingredient) %></li>
+          <% end %>
+        </ul>
+        <% else %>
+         <p>編集中</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
