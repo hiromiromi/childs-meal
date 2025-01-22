@@ -16,18 +16,18 @@
 | detail    | text   | null: false  |
 
 ### Association
- - belongs_to :recipe_ingredients(中間テーブル)
+ - has_many :recipe_ingredients(中間テーブル)
 
 ## recipesテーブル
 | Column             | Type   | Options                   |
 | ------------------ | ------ | ------------------------- |
 | dish_name          | string | null: false               |
-| material           | string | null: false               |
+| material           | text   | null: false               |
 | dish_recipe        | text   | null: false               |
 | dish_nutrients     | text   | null: false               |
 
 ### Association
- - belongs_to :recipe_ingredients(中間テーブル)
+ - has_many :recipe_ingredients(中間テーブル)
  - has_many :favorites
 
 ## columnsテーブル
