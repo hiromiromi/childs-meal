@@ -72,7 +72,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem "devise"
 end
 
 group :production do
@@ -80,3 +79,4 @@ group :production do
 end
 
 gem 'active_hash'
+gem "devise"
