@@ -12,7 +12,7 @@
         <div class="section-label">摂りたい栄養から探す</div>
           <div class ="buttons">
           <% @nutrients.each do |nutrient| %>
-            <button><%= link_to nutrient.label , ingredients_index_path(nutrient.id) %></button>
+            <button><%= link_to nutrient.label , ingredient_path(nutrient.id) %></button>
           <% end %>
           </div>
 
