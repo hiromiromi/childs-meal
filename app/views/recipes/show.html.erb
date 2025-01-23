@@ -1,0 +1,10 @@
+ <%= render "shared/header" %>
+
+<div class = "recipe">
+  <div class = "recipe-name">
+    <%= @recipe.name %>
+  </div>
+
+    <%= image_tag @recipe.image.to_s, :size =>'100x100' , class: "recipe-image" %>
+
+<%# 材料から続き書く。　しばらく悩みそうなので後回し%>
