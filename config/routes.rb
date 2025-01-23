@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'meals#index'
-  resources :ingredients, only: [:index ] do
+  resources :ingredients, only: [:index] do
     collection do
       get 'search'
     end

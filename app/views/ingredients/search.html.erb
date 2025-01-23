@@ -1,7 +1,9 @@
+<%= render "shared/header" %>
+<div class= "search-result" >
 <%= form_with(url: search_ingredients_path, local: true, method: :get, class: "search-form") do |form| %>
   <div class = "search-bar" >
     <div class = "search-field">
-      <%= form.text_field :keyword, placeholder: "食材を入力してください" %>
+      <%= form.text_field :keyword, placeholder: "食材をひらがな入力してください" %>
     </div>
       <%= form.submit "検索", class: "search-btn" %>
   </div>
@@ -11,4 +13,6 @@
   <% @ingredients.each do |ingredient| %>
     <%= render partial: "ingredient", locals: { ingredient: ingredient } %>
   <% end %>
+</div>
+
 </div>
