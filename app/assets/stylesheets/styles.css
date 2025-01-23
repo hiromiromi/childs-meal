@@ -155,3 +155,8 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* 食材小話の改行*/
+.ingredient-detail {
+  white-space: pre-wrap;
+}
