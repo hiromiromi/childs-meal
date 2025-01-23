@@ -1,0 +1,11 @@
+  <%= render "shared/header" %>
+
+  <div class = "columns">
+    <div class = "columns-lists">
+      <div class = "column-title">
+        <% @columns.each do |column| %>
+          <%= link_to column.title , column_path(column.id) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
