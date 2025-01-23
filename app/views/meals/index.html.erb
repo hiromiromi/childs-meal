@@ -4,10 +4,15 @@
         <p>レシピを見つけよう</p>
 
         <div class="section-label">食材から探す</div>
-        <div class="search-bar">
-            <input type="text" placeholder="食材を入力してください">
-            <button>検索</button>
-        </div>
+          <%= form_with(url: search_ingredients_path, local: true, method: :get, class: "search-form") do |form| %>
+            <div class = "search-bar" >
+              <div class = "search-field">
+                <%= form.text_field :keyword, placeholder: "食材をひらがな入力してください" %>
+              </div>
+                <%= form.submit "検索", class: "search-btn" %>
+            </div>
+          <% end %>
+
 
         <div class="section-label">摂りたい栄養から探す</div>
           <div class ="buttons">
