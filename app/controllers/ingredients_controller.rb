@@ -10,4 +10,9 @@ class IngredientsController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def search
+    @ingredients = Ingredient.search(params[:keyword])
+    render :search 
+  end
+
 end
