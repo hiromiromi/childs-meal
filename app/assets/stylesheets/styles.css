@@ -104,12 +104,16 @@ header {
 .column-button button {
   padding: 15px 30px;
   font-size: 16px;
-  color: white;
   background-color:gray;
-  border: none;
   border-radius: 10px;
   cursor: pointer;
   margin-bottom: 30px;
+  border : none;
+}
+
+.column-button a{
+  color: white;
+  text-decoration: none;
 }
 
 .buttons a {
@@ -159,4 +163,14 @@ footer a:hover {
 /* 食材小話の改行*/
 .ingredient-detail {
   white-space: pre-wrap;
+}
+
+.column-title a{
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.column-title{
+  margin: 10px 20px;
 }
