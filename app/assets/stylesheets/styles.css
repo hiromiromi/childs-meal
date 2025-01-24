@@ -163,7 +163,7 @@ footer a:hover {
 
 /* 食材小話の改行*/
 .ingredient-detail {
-  white-space: pre-wrap;
+  white-space: pre-wrap !important;
 }
 
 .column-title a{
