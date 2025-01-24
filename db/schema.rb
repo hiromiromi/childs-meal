@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_23_040402) do
   create_table "columns", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "news", null: false
-    t.text "column_image", null: false
+    t.text "column_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
