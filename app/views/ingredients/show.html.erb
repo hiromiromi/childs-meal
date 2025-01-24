@@ -2,10 +2,10 @@
 
 <div class = "ingredient">
   <div class = "ingredient-name">
-    <%= @ingredient.name%>
+    <b><%= @ingredient.name %></b>
   </div>
 
-  <%= image_tag @ingredient.image.to_s, :size =>'100x100' , class: "ingredient-image" %>
+  <%= image_tag @ingredient.image.to_s, :size =>'150x170' , class: "ingredient-image" %>
   <div class = "ingredient-detail">
     <p>小話</p>
       <%= @ingredient.detail %>
