@@ -4,7 +4,7 @@
     <div class = "columns-lists">
       <% @columns.each do |column| %>
         <div class = "column-title">
-          <%= link_to column.title , column_path(column.id) %>
+          <%= link_to column.title , column_path(column.id) , class: "column" %>
         </div>
       <% end %>
     </div>
