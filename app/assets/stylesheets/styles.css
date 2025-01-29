@@ -242,3 +242,36 @@ li{
 .devise-field {
   margin-left: 20px;
 }
+
+.theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heart{
+  position: relative;
+  top:20px;
+}
+
+.main-theme{
+  font-size: 20px;
+}
+
+.sub-theme{
+  position: relative;
+  bottom: 30px;
+  left: 20px;
+  color: #666;
+}
+
+.theme-line{
+  opacity: 0.5;
+}
+
+.theme-line-invert{
+  transform: scale(1, -1);
+  opacity: 0.5;
+}
