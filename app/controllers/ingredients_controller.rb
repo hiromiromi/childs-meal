@@ -7,7 +7,7 @@ class IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
-    @recipes = Recipe.all
+    @recipes = @ingredient.recipes
   end
 
   def search
