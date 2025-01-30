@@ -1,10 +1,37 @@
  <%= render "shared/header" %>
 
-<div class = "recipe">
-  <div class = "recipe-name">
-    <%= @recipe.name %>
-  </div>
+<div class="recipe-details">
+  <h1><%= @recipe.dish_name %></h1>
 
-    <%= image_tag @recipe.image.to_s, :size =>'100x100' , class: "recipe-image" %>
+  <% if @recipe.recipe_image.present? %>
+    <div class="recipe-image">
+      <%= image_tag @recipe.recipe_image, alt: @recipe.dish_name %>
+    </div>
+  <% end %>
 
-<%# 材料から続き書く。　しばらく悩みそうなので後回し%>
+  <h2>材料と分量</h2>
+  <p><%= simple_format(@recipe.material) %></p> <!-- 改行を考慮して表示 -->
+
+  <h2>作り方</h2>
+  <p><%= simple_format(@recipe.dish_recipe) %></p>
+
+  <h2>栄養情報</h2>
+  <% if @recipe.recipe_nutrients.present? %>
+    <p><%= simple_format(@recipe.recipe_nutrients) %></p>
+  <% else %>
+    <p>栄養情報は現在登録されていません。</p>
+  <% end %>
+
+  <h2>使用している食材</h2>
+  <% if @ingredients.any? %>
+    <ul>
+      <% @ingredients.each do |ingredient| %>
+        <li>
+          <%= link_to ingredient.name, ingredient_path(ingredient) %> <!-- 食材ページへのリンク -->
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>食材情報は現在登録されていません。</p>
+  <% end %>
+</div>
