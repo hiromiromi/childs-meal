@@ -11,7 +11,7 @@
           <div class = "ingredients-lists-name">
             <ul>
               <% @ingredients.each do |ingredient| %>
-                <li><%= link_to ingredient.name , ingredient_detail_path(ingredient) , class: "ingredients-list" %></li>
+                <li><%= link_to ingredient.name , ingredient_path(ingredient) , class: "ingredients-list" %></li>
               <% end %>
             </ul>
               <% else %>

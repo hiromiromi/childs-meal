@@ -40,7 +40,7 @@
             <ul>
               <% @ingredients.each do |ingredient| %>
             <li>
-              <%= link_to ingredient.name, ingredient_detail_path(ingredient) %> <!-- 食材ページへのリンク -->
+              <%= link_to ingredient.name, ingredient_path(ingredient) %> <!-- 食材ページへのリンク -->
             </li>
               <% end %>
             </ul>
