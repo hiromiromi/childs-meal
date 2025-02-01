@@ -2,8 +2,19 @@
 
 <div class = "recipe-details">
   <div class = "dish">
-    <div class = "dish-name">
+    <div class = "dish-name" >
       <h2><%= @recipe.dish_name %></h2>
+        <div class = "dish-favo">
+          <% if @favorite %>
+            <%= form_with url: recipe_favorite_path(@recipe, @favorite), method: :delete, remote: true, id: "dish_favo_form" do |f| %>
+              <%= image_submit_tag("wheart.png",width:"40",height:"40", id: "favorite_btn" ) %>
+            <% end %>
+          <% else %>
+            <%= form_with url: recipe_favorites_path(@recipe), method: :post, remote: true, id: "dish_favo_form" do |f| %>
+              <%= image_submit_tag("wheart.png", width: "40", height: "40", id: "favorite_btn") %>
+            <% end %>
+          <% end %>
+        </div>
     </div>
 
       <div class= "image-judgment">
