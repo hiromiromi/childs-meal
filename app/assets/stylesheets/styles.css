@@ -290,3 +290,11 @@ li{
   position: relative;
   left: 300px;
 }
+
+.dish-name{
+  display: flex;
+}
+
+.dish-favo{
+  margin: 15px 30px;
+}

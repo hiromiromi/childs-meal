@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_30_061519) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_31_054215) do
   create_table "columns", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "news", null: false
     t.text "column_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "recipe_id"
+    t.bigint "column_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["column_id"], name: "index_favorites_on_column_id"
+    t.index ["recipe_id"], name: "index_favorites_on_recipe_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "ingredients", charset: "utf8", force: :cascade do |t|
@@ -60,6 +71,9 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_30_061519) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "columns"
+  add_foreign_key "favorites", "recipes"
+  add_foreign_key "favorites", "users"
   add_foreign_key "recipe_ingredients", "ingredients"
   add_foreign_key "recipe_ingredients", "recipes"
 end

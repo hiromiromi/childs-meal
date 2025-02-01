@@ -1,15 +1,25 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users 
+  
   root to: 'meals#index'
-  resources :ingredients, only: [:index] do
+  resources :ingredients, only: [:index, :show] do
     collection do
       get 'search'
     end
   end
-  resources :nutrients, only: [:index ]
-      get 'nutrients/:id', to: 'ingredients#index', as: 'ingredient'
-      get 'ingredients/:id', to: 'ingredients#show', as: 'ingredient_detail'
-      get 'recipes/:id', to: 'recipes#show', as: 'recipe'
-  resources :columns, only: [:index ,:show]
+
+  get 'nutrients/:id', to: 'ingredients#index', as: 'nutrient_ingredients'
+
+  resources :recipes, only: [:show] do
+    resources :favorites, only: [:create, :destroy]
+  end
+
+  resources :columns, only: [:index ,:show] do
+    resources :favorites, only: [:create, :destroy]
+  end
+
+  resources :users, only: [] do
+    resources :favorites, only: [:index]
+  end
 
 end 
