@@ -1,0 +1,15 @@
+  <%= render "shared/header" %>
+
+<h1><%= current_user.nickname %> さんのお気に入り</h1>
+
+<ul>
+  <% @favorites.each do |favorite| %>
+    <li>
+      <% if favorite.recipe.present? %>
+        <%= link_to favorite.recipe.title, recipe_path(favorite.recipe) %>
+      <% elsif favorite.column.present? %>
+        <%= link_to favorite.column.title, column_path(favorite.column) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

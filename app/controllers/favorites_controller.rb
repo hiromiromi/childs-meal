@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
-  before_action :set_recipe
-  before_action :set_column
+  before_action :authenticate_user!
+  before_action :set_recipe, only: [:create, :destroy]
+  before_action :set_column, only: [:create, :destroy]
 
   def new
     @favorite = Favorite.new
@@ -17,13 +17,18 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite_recipe = Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id)
-    @favorite.destroy if @favorite
+    @favorite.destroy if @favorite_recipe
+
+    @favorite_column = Favorite.find_by(user_id: current_user.id, column_id: @column.id)
+    @favorite_column.destroy if @favorite_column
+
     respond_to do |format|
       format.js # d
     end
+  end
 
-    @favorite_column = Favorite.find_by(user_id: current_user.id, column_id: @column.id)
-    @favorite_column.destroy
+  def index
+    @favorites = current_user.favorites.includes(:recipe, :column) #includesでN+1問題対策
   end
 
 
