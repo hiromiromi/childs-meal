@@ -6,10 +6,11 @@
   <% @favorites.each do |favorite| %>
     <li>
       <% if favorite.recipe.present? %>
-        <%= link_to favorite.recipe.title, recipe_path(favorite.recipe) %>
+        <%= link_to favorite.recipe.dish_name, recipe_path(favorite.recipe) %>
       <% elsif favorite.column.present? %>
         <%= link_to favorite.column.title, column_path(favorite.column) %>
       <% end %>
     </li>
   <% end %>
 </ul>
+

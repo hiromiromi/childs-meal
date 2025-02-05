@@ -1,19 +1,38 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_recipe, only: [:create, :destroy]
-  before_action :set_column, only: [:create, :destroy]
+  before_action :set_recipe, only: [:create, :destroy],if: -> { params[:recipe_id].present? }
+  before_action :set_column, only: [:create, :destroy], if: -> { params[:column_id].present? }
 
   def new
     @favorite = Favorite.new
   end
 
   def create
-    @favorites_recipe = Favorite.create(user_id: current_user.id, recipe_id: @recipe.id)
+    if params[:recipe_id].present?
+      @favorite = current_user.favorites.new(recipe_id: params[:recipe_id])
+    elsif params[:column_id].present?
+      @favorite = current_user.favorites.new(column_id: params[:column_id])
+    else
+      Rails.logger.error("お気に入り登録失敗: recipe_id も column_id もありません")
+      redirect_to request.referer, alert: 'お気に入り登録に失敗しました。'
+      return
+    end
+  
+    if @favorite.save
       respond_to do |format|
         format.js
+        format.html { redirect_to request.referer, notice: 'お気に入りに登録しました！' }
       end
-    @favorites_column = Favorite.create(user_id: current_user.id, column_id: @column.id)
+    else
+      Rails.logger.error("お気に入り登録失敗: #{@favorite.errors.full_messages.join(", ")}")
+      respond_to do |format|
+        format.html { redirect_to request.referer, alert: 'お気に入り登録に失敗しました。' }
+      end
+    end
   end
+  
+
+  
 
   def destroy
     @favorite_recipe = Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id)
@@ -23,7 +42,7 @@ class FavoritesController < ApplicationController
     @favorite_column.destroy if @favorite_column
 
     respond_to do |format|
-      format.js # d
+      format.js 
     end
   end
 
