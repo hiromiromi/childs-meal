@@ -1,7 +1,8 @@
 class Favorite < ApplicationRecord
-  belongs_to :user   
-  belongs_to :recipe   
-  belongs_to :column
+  belongs_to :user
+  belongs_to :recipe, optional: true
+  belongs_to :column, optional: true
 
-  validates_uniqueness_of :recipe_id, :column_id, scope: :user_id
+  validates :recipe_id, uniqueness: { scope: :user_id }, if: -> { recipe_id.present? }
+  validates :column_id, uniqueness: { scope: :user_id }, if: -> { column_id.present? }
 end
