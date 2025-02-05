@@ -32,19 +32,28 @@ class FavoritesController < ApplicationController
   end
   
 
-  
-
   def destroy
-    @favorite_recipe = Favorite.find_by(user_id: current_user.id, recipe_id: @recipe.id)
-    @favorite.destroy if @favorite_recipe
-
-    @favorite_column = Favorite.find_by(user_id: current_user.id, column_id: @column.id)
-    @favorite_column.destroy if @favorite_column
-
-    respond_to do |format|
-      format.js 
+    if params[:recipe_id].present?
+      @favorite = Favorite.find_by(user_id: current_user.id, recipe_id: params[:recipe_id])
+    elsif params[:column_id].present?
+      @favorite = Favorite.find_by(user_id: current_user.id, column_id: params[:column_id])
+    end
+  
+    if @favorite
+      @favorite.destroy
+      respond_to do |format|
+        format.js
+        format.html { redirect_to request.referer, notice: 'お気に入りから削除しました！' }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to request.referer, alert: '削除に失敗しました。' }
+      end
     end
   end
+  
+
+
 
   def index
     @favorites = current_user.favorites.includes(:recipe, :column) #includesでN+1問題対策
