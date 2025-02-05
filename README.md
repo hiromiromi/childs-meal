@@ -85,3 +85,10 @@ https://childs-meal.onrender.com
 ## 開発環境
 - Rails 7.0.8.7
 - Mysql Ver 14.14
+
+## 栄養素選択→食材選択→レシピ選択GIF
+![Image from Gyazo](https://i.gyazo.com/332a66d313937f68cd6b322e599e4686.gif)](https://gyazo.com/332a66d313937f68cd6b322e599e4686)
+
+
+##  食材検索GIF
+[![Image from Gyazo](https://i.gyazo.com/256bf8468c7d89f2d360a219f60a4958.gif)](https://gyazo.com/256bf8468c7d89f2d360a219f60a4958)
