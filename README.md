@@ -92,3 +92,9 @@ https://childs-meal.onrender.com
 
 ##  食材検索GIF
 [![Image from Gyazo](https://i.gyazo.com/256bf8468c7d89f2d360a219f60a4958.gif)](https://gyazo.com/256bf8468c7d89f2d360a219f60a4958)
+
+## お気に入り登録・マイページから閲覧
+[![Image from Gyazo](https://i.gyazo.com/c0d86f9213d7392e1e2fb83ca214bc9d.gif)](https://gyazo.com/c0d86f9213d7392e1e2fb83ca214bc9d)
+
+## お気に入りからの削除
+[![Image from Gyazo](https://i.gyazo.com/89152bbb7e9f79ffe550c82fc62e3983.gif)](https://gyazo.com/89152bbb7e9f79ffe550c82fc62e3983)
